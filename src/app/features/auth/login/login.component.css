@@ -7,37 +7,60 @@
   text-align: center;
   padding-top: 80px;
 }
+
 .title {
   color: black;
   font-size: 2em;
   margin-bottom: 10px;
 }
+
 .subtitle {
   color: #facc15;
   font-size: 1.5em;
   margin-bottom: 20px;
 }
+
 .input-group {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
+  width: 80%; /* Ajusta el ancho de los campos */
   margin-bottom: 15px;
 }
+
 .input-group label {
-  flex: 1;
   text-align: left;
   font-size: 1em;
+  margin-right: 10px; /* Añade un poco de separación */
+  width: 30%; /* Le damos un espacio adecuado a la etiqueta */
 }
+
 .input-group input {
-  flex: 2;
   border-radius: 30px;
   background-color: #ffffff;
   padding: 10px;
   width: 100%;
   border: 1px solid #e0e0e0;
+  margin-left: 10px; /* Espacio entre la etiqueta y el campo de entrada */
 }
+
+.input-group input.valid {
+  border: 2px solid green;
+  background-color: #e8f5e9; /* Verde claro */
+}
+
+.input-group input.invalid {
+  border: 2px solid red;
+  background-color: #ffebee; /* Rojo claro */
+}
+
+.error-message small {
+  color: red;
+  font-size: 0.875em;
+  margin-top: 5px;
+}
+
 button {
   background-color: #facc15;
   border: none;
@@ -55,10 +78,9 @@ button {
   }
   .input-group label {
     margin-bottom: 5px;
+    width: auto; /* Ajusta el tamaño en pantallas pequeñas */
   }
-  .footer {
-    height: auto;
-    padding: 10px;
-    text-align: center;
+  .input-group input {
+    margin-left: 0; /* Elimina el margen izquierdo en pantallas pequeñas */
   }
 }
