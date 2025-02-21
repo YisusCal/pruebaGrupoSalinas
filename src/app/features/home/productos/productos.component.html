@@ -1,11 +1,15 @@
 <div class="product-list">
   <div class="product-item" *ngFor="let pizza of pizzas">
-    <img [src]="pizza.imageUrl" alt="{{pizza.name}}" class="product-image">
+    <img 
+      [src]="pizza.imageUrl" 
+      alt="{{pizza.name}}" 
+      class="product-image" 
+      [ngClass]="{'grayscale': pizza.soldOut}">
     <div class="product-info">
       <h3>{{pizza.name}}</h3>
-      <p><strong>Ingredientes:</strong> {{pizza.ingredients.join(', ')}}</p>
-      <p><strong>Precio:</strong> ${{pizza.unitPrice}}</p>
-      <p *ngIf="pizza.soldOut" class="sold-out">Agotado</p>
+      <p>{{capitalizarIngredientes(pizza.ingredients).join(', ')}}</p>
+      <p *ngIf="!pizza.soldOut">${{formatPrecio(pizza.unitPrice)}}</p>
+      <p *ngIf="pizza.soldOut" class="sold-out">SOLD OUT</p>
       
       <!-- Botón Comprar -->
       <button 

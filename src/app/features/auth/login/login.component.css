@@ -5,19 +5,21 @@
   align-items: center;
   height: 100vh;
   text-align: center;
-  padding-top: 80px;
+  padding-top: 60px;
 }
 
 .title {
   color: black;
-  font-size: 2em;
-  margin-bottom: 10px;
+  font-size: 2.5em;
+  margin-bottom: 15px;
+  letter-spacing: 2px;
 }
 
 .subtitle {
   color: #facc15;
-  font-size: 1.5em;
+  font-size: 1.7em;
   margin-bottom: 20px;
+  letter-spacing: 1px;
 }
 
 .input-group {
@@ -25,62 +27,78 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  width: 80%; /* Ajusta el ancho de los campos */
-  margin-bottom: 15px;
+  width: 100%; 
+  margin-bottom: 20px;
 }
 
 .input-group label {
   text-align: left;
-  font-size: 1em;
-  margin-right: 10px; /* Añade un poco de separación */
-  width: 30%; /* Le damos un espacio adecuado a la etiqueta */
+  font-size: 1.2em;
+  margin-right: 15px;
+  width: 35%;
 }
 
 .input-group input {
   border-radius: 30px;
   background-color: #ffffff;
-  padding: 10px;
-  width: 100%;
+  padding: 15px; /* Aumenta el padding para mayor tamaño */
+  width: 60%; /* Establece el ancho al 60% del contenedor */
   border: 1px solid #e0e0e0;
-  margin-left: 10px; /* Espacio entre la etiqueta y el campo de entrada */
+  margin-left: 15px;
+  font-size: 1em; /* Aumenta el tamaño de la fuente */
 }
 
 .input-group input.valid {
   border: 2px solid green;
-  background-color: #e8f5e9; /* Verde claro */
+  background-color: #e8f5e9;
 }
 
 .input-group input.invalid {
   border: 2px solid red;
-  background-color: #ffebee; /* Rojo claro */
+  background-color: #ffebee;
 }
 
 .error-message small {
   color: red;
-  font-size: 0.875em;
+  font-size: 1em;
   margin-top: 5px;
 }
 
 button {
   background-color: #facc15;
   border: none;
-  padding: 10px 20px;
+  padding: 12px 30px;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 18px;
   border-radius: 20px;
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
 @media (max-width: 600px) {
+  .login-container {
+    justify-content: center; 
+    padding-top: 0; 
+  }
+
   .input-group {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center; 
+    width: 80%; 
+    margin-bottom: 20px;
   }
+
   .input-group label {
+    text-align: center; 
     margin-bottom: 5px;
-    width: auto; /* Ajusta el tamaño en pantallas pequeñas */
+    width: 100%; 
   }
+
   .input-group input {
-    margin-left: 0; /* Elimina el margen izquierdo en pantallas pequeñas */
+    margin-left: 0;
+    width: 100%; 
+  }
+
+  button {
+    width: 80%; 
   }
 }

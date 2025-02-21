@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { ActivatedRoute, Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 import { Subject } from 'rxjs';
 
 @Injectable({
@@ -11,13 +10,11 @@ export class LoginService {
   public loginStatusSubjec = new Subject<boolean>();
   constructor(
     private httpClient: HttpClient,
-    private router: Router,
-    private activateRoute: ActivatedRoute
   ) {}
 
   //generar el token
   public generateToken(loginData: any) {
-    return this.httpClient.post(`https://reqres.in/api/login`, loginData);
+    return this.httpClient.post<{ token?: string; error?: string }>(`https://reqres.in/api/login`, loginData);
   }
 
   public loginUser(token: any) {
@@ -25,7 +22,7 @@ export class LoginService {
   }
 
   public isLoggedIn() {
-    let tokenStr = localStorage.getItem('token');
+    let tokenStr = sessionStorage.getItem('token');
     if (tokenStr == undefined || tokenStr == '' || tokenStr == null) {
       return false;
     } else {

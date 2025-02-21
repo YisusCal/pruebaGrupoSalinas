@@ -17,7 +17,7 @@
   max-width: 800px;
   border-radius: 8px;
   background-color: #f9f9f9;
-  position: relative; /* Para posicionar el botón correctamente */
+  position: relative;
 }
 
 .product-image {
@@ -26,6 +26,11 @@
   object-fit: cover;
   margin-right: 20px;
   border-radius: 8px;
+  transition: filter 0.3s ease;
+}
+
+.grayscale {
+  filter: grayscale(100%);
 }
 
 .product-info {
@@ -42,10 +47,11 @@
 
 .product-info p {
   margin: 5px 0;
+  color: #9e9e9e;
 }
 
 .sold-out {
-  color: red;
+  color: #9e9e9e;
   font-weight: bold;
 }
 
@@ -53,7 +59,7 @@
 .buy-button {
   padding: 10px 20px;
   border: none;
-  border-radius: 5px;
+  border-radius: 20px;
   font-size: 1rem;
   cursor: pointer;
   transition: background-color 0.3s;
@@ -64,7 +70,7 @@
 
 .available-button {
   background-color: #facc15;
-  color: white;
+  color: black;
 }
 
 .sold-out-button {
@@ -75,4 +81,71 @@
 
 .buy-button:disabled {
   cursor: not-allowed;
+}
+
+/* Responsividad solo para pantallas pequeñas */
+@media (max-width: 768px) {
+  .product-list {
+    margin-top: 150px;  /* Añadimos espacio entre la cabecera y el primer producto */
+    margin-bottom: 50px;
+  }
+
+  .product-item {
+    width: 95%; /* Asegura que los productos ocupen el 95% del ancho en pantallas pequeñas */
+    flex-direction: column; /* Los elementos de cada producto se apilan en lugar de estar uno al lado del otro */
+    align-items: center; /* Centra los elementos dentro del producto */
+    padding: 10px;
+  }
+
+  .product-image {
+    width: 100px; /* Ajusta el tamaño de la imagen */
+    height: 100px;
+    margin-right: 0; /* Elimina el margen a la derecha */
+    margin-bottom: 10px; /* Añade margen inferior para separación */
+  }
+
+  .product-info h3 {
+    font-size: 1rem; /* Ajusta el tamaño de la fuente */
+    text-align: center; /* Centra el título del producto */
+  }
+
+  .product-info p {
+    font-size: 0.9rem; /* Ajusta el tamaño del texto */
+    text-align: center; /* Centra el texto */
+  }
+
+  .buy-button {
+    position: relative; /* Cambia la posición del botón */
+    margin-top: 10px;
+    width: 100%; /* Asegura que el botón ocupe todo el ancho disponible */
+    padding: 12px;
+    font-size: 1.1rem;
+  }
+}
+
+/* Para dispositivos móviles aún más pequeños */
+@media (max-width: 480px) {
+  .product-item {
+    width: 100%; /* En pantallas más pequeñas, los productos ocuparán todo el ancho */
+    margin-bottom: 15px; /* Añade espacio entre productos */
+  }
+
+  .product-image {
+    width: 80px;
+    height: 80px;
+  }
+
+  .product-info h3 {
+    font-size: 0.9rem;
+  }
+
+  .product-info p {
+    font-size: 0.8rem;
+  }
+
+  .buy-button {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+  }
 }

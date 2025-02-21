@@ -23,5 +23,13 @@ export class ProductosComponent implements OnInit{
     });
   }
 
-
+  capitalizarIngredientes(ingredientes: string[]): string[] {
+    return ingredientes.map(ingrediente => 
+      ingrediente.charAt(0).toUpperCase() + ingrediente.slice(1)
+    );
+  }
+  
+  formatPrecio(price: number): string {
+    return price.toFixed(2);  
+  }
 }
