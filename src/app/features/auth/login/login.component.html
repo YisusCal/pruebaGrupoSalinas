@@ -1,1 +1,15 @@
-<p>login works!</p>
+<div class="login-container">
+  <h1 class="title">La mejor pizza.</h1>
+  <h2 class="subtitle">Recien salida del horno, directo a ti.</h2>
+  <form (ngSubmit)="onSubmit()">
+    <div class="input-group">
+      <label>Usuario</label>
+      <input type="text" placeholder="Ejem:user1234" [(ngModel)]="user.email" name="email" required>
+    </div>
+    <div class="input-group">
+      <label>Contraseña</label>
+      <input type="password" placeholder="Ejem:123_contraseña" [(ngModel)]="user.password" name="password" required>
+    </div>
+    <button type="submit">Enviar</button>
+  </form>
+</div>
