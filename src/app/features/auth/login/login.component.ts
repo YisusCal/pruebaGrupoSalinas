@@ -18,6 +18,8 @@ export class LoginComponent {
       (response) => {
         // Aquí manejas la respuesta, por ejemplo, almacenando el token
         console.log('Token recibido:', response);
+        this.router.navigate(['home']);
+        //this.loginService.loginStatusSubjec.next(true);
         // Aquí puedes redirigir al usuario si es necesario
       },
       (error) => {

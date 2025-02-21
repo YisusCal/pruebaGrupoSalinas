@@ -13,26 +13,11 @@ const routes: Routes = [
     path: '',
     loadChildren: () => import('./features/auth/auth.module').then((m) => m.AuthModule),
   },
-  /* {
-    path: 'admin',
-    canActivate: [AdminGuard],
-    loadChildren: () => import('./features/admin/admin.module').then((m) => m.AdminModule),
+   {
+    path: 'home',
+    //canActivate: [AdminGuard],
+    loadChildren: () => import('./features/home/home.module').then((m) => m.HomeModule),
   },
-  {
-    path: 'user-dashboard',
-    canActivate: [NormalGuard],
-    loadChildren: () => import('./features/user/user.module').then((m) => m.UserModule),
-  },
-  {
-    path: 'nyn-b',
-    component: FormTutorNynBComponent,
-  }, */
-  // {
-  //   path: 'stepper-nyn-b',
-  //   component: StepperTramitesPamComponent,
-  // },
-  { path: '**', redirectTo: 'error/404' },
-  //{ path: '**', redirectTo: 'login' },
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

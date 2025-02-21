@@ -1,0 +1,19 @@
+<div class="product-list">
+  <div class="product-item" *ngFor="let pizza of pizzas">
+    <img [src]="pizza.imageUrl" alt="{{pizza.name}}" class="product-image">
+    <div class="product-info">
+      <h3>{{pizza.name}}</h3>
+      <p><strong>Ingredientes:</strong> {{pizza.ingredients.join(', ')}}</p>
+      <p><strong>Precio:</strong> ${{pizza.unitPrice}}</p>
+      <p *ngIf="pizza.soldOut" class="sold-out">Agotado</p>
+      
+      <!-- Botón Comprar -->
+      <button 
+        class="buy-button" 
+        [ngClass]="{'sold-out-button': pizza.soldOut, 'available-button': !pizza.soldOut}" 
+        [disabled]="pizza.soldOut">
+        Comprar
+      </button>
+    </div>
+  </div>
+</div>
